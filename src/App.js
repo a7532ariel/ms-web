@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Init from './background/InitBG';
+import TestBG from './background/TestBG';
+import ResultBG from './background/ResultBG';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Init />
+      <div className="content-container">
+        <div className="container">
+          HAHA
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
+
