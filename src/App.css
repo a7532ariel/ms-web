@@ -79,7 +79,7 @@ svg {
   justify-content: center;
   height: 100%;
 }
-.container-landing {
+.container-landing, .test-container {
   text-align: center;
   margin: 0 auto;
 }
@@ -117,18 +117,69 @@ svg {
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
+  letter-spacing: 1.2px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   padding: 35px 48px 52px 48px;
-  letter-spacing: 1.2px;
   margin-top: 30px !important;
   width: 554px;
+}
+.intro-test {
+  color: #363636;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+  letter-spacing: 1.2px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.start-btn {
+  background-color: #29CEB9;
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 30px;
+  border-color: transparent;
+  box-shadow: 0px 5px 0px #25B9A6;
+  transition: 0.1s;
+  letter-spacing: 1.2px;
+}
+.start-btn:hover {
+  margin-top: -5px;
+  box-shadow: 0px 10px 0px #25B9A6;
+}
+.start-btn:focus {
+  outline: none;
+}
+.start-btn:active {
+  margin-top: 0px;
+  background-color: #25B9A6;
+  box-shadow: 0px 5px 0px #25B9A6;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.start-btn-container {
+  height: 80px ;
+  margin-top: -25px !important;
+}
+
+.top-logo svg {
+  top: 40px;
+  left: 40px;
+  width: 135px;
+  height: 65px;
+  z-index: 200 !important;
 }
 
 .next-step-btn {
   background-color: #29CEB9;
-  width: 300px;
-  height: 60px;
+  width: 150px;
+  height: 50px;
   border-radius: 30px;
   color: white;
   font-weight: 500;
@@ -145,15 +196,69 @@ svg {
 }
 .next-step-btn:focus {
   outline: none;
-  
 }
 .next-step-btn:active {
   margin-top: 0px;
   background-color: #25B9A6;
   box-shadow: 0px 5px 0px #25B9A6;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .next-step-btn-container {
   height: 80px ;
-  margin-top: -25px !important;
+}
+
+.test-container input {
+  width: 780px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 1.2px;
+  border-radius: 30px;
+  border-color: transparent;
+  padding-left: 30px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.test-container input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #c4c4c4;
+}
+
+.green-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #25B9A6;
+}
+
+.white-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.dot-container {
+  text-align:center;
+  vertical-align: middle; 
+}
+.dot-container div {
+  display:inline-block;
+  vertical-align: middle;
+  margin: auto 10px;
+}
+.dot-container-ab {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: 75px;
+}
+
+.separator {
+  margin-bottom: 30px;
 }

@@ -31,8 +31,8 @@ function MainWord() {
 
 function StartTest() {
   return (
-    <div className="next-step-btn-container">
-    <button className="next-step-btn"> 
+    <div className="start-btn-container">
+    <button className="start-btn"> 
       開始測驗
     </button>
     </div>
