@@ -13,8 +13,17 @@ function Confirm(props) {
 function Result(props) {
   console.log(props)
   const formSubmit = () => {
-    const params = new URLSearchParams({ result: props.score, name: props.userName })
-    fetch(`https://ms-fruit.loca.lt/print?${params}`)
+    let requestOptions = {
+      method: 'POST',
+      body: JSON.stringify({
+        result: 1,
+        name: props.userName
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
+    };
+    fetch('/api/print', requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result)
