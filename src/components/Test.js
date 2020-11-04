@@ -19,6 +19,11 @@ function Test(props) {
       setSelected(idx)
     }
 
+    const testPageNextPageHandler = () => {
+      setSelected(-1)
+      props.goToNextPage(props.data.options[selected].score)
+    }
+
     
     let options = props.data.options.map((option, i) => {
         const select = selected === i ? 'select' : '';
@@ -55,7 +60,7 @@ function Test(props) {
                 <div className="test-options">
                   {options}
                 </div>
-                <Confirm cantGoToNext={selected === -1} goToNextPage={()=>props.goToNextPage(props.data.options[selected].score)} />
+                <Confirm cantGoToNext={selected === -1} goToNextPage={testPageNextPageHandler} />
                 <Page page={props.page}/>
               </div>
             </div>
