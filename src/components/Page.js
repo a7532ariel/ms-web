@@ -1,6 +1,6 @@
 function Page(props) {
     let dots = [...Array(6)].map((x, i) =>
-        <div className={props.page === i ? 'green-dot': 'white-dot'} 
+        <div className={props.page === i+1 ? 'green-dot': 'white-dot'} 
             key={i}>
         </div>
       )

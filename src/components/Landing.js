@@ -29,17 +29,17 @@ function MainWord() {
   );
 }
 
-function StartTest() {
+function StartTest(props) {
   return (
     <div className="start-btn-container">
-    <button className="start-btn"> 
+    <button className="start-btn" onClick={props.goToNextPage} > 
       開始測驗
     </button>
     </div>
   );
 }
 
-function Landing() {
+function Landing(props) {
     return (
       <div>
         <Init />
@@ -54,7 +54,7 @@ function Landing() {
               搭配和你對味的 Workmate Mircosoft 365<br></br>
               完成測驗及任務後，即可到 BAR 兌換微醺軟心水果泡泡飲乙杯！
             </div>
-            <StartTest />
+            <StartTest goToNextPage={props.goToNextPage}/>
           </div>
           </div>
         </div>

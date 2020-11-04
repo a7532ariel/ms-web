@@ -1,10 +1,10 @@
 import TestBG from '../background/TestBG';
 import Page from '../components/Page';
 
-function Confirm() {
+function Confirm(props) {
   return (
     <div className="next-step-btn-container separator">
-    <button className="next-step-btn"> 
+    <button className="next-step-btn" disabled={props.cantGoToNext} onClick={props.goToNextPage}> 
       確認
     </button>
     </div>
@@ -23,10 +23,10 @@ function Info(props) {
                   準備開始囉，請輸入你的名字：
                 </div>
                 <div className="separator">
-                  <input type="text" onChange={props.handleChange} placeholder="輸入姓名"/>
+                  <input type="text" onChange={props.handleNameChange} placeholder="輸入姓名"/>
                 </div>
-                <Confirm />
-                <Page page={0}/>
+                <Confirm cantGoToNext={props.userName === ''} goToNextPage={props.goToNextPage}/>
+                <Page page={props.page}/>
               </div>
             </div>
           </div>
