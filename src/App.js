@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Landing from './components/Landing';
 import Info from './components/Info';
 import Logo from './components/Logo';
+import question from './question.json';
+import Test from './components/Test';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -12,13 +14,16 @@ function App() {
   const goToNextPage = () => {
     setPage(page+1)
   }
+  const goToNextPageAndAddScore = (val) => {
+    setPage(page+1)
+    setScore(score+val)
+  }
   const goToTheFirstPage = () => {
     setPage(0)
     setScore(0)
     setUserName('')
   }
   const handleNameChange = (e) => {
-    console.log(e.target.value)
     setUserName(e.target.value)
   }
 
@@ -38,11 +43,12 @@ function App() {
               userName={userName}/>
       }
       {
-        page > 1 && page < 7 
-        // <Test page={page} 
-        // goToNextPage={goToNextPage}/>
+        page > 1 && page < 7 &&
+        <Test score={score}
+              page={page} 
+              data={question[page-2]}
+              goToNextPage={goToNextPageAndAddScore}/>
       }
-      
     </div>
   );
 }

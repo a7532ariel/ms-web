@@ -1,5 +1,5 @@
 import TestBG from '../background/TestBG';
-import Page from '../components/Page';
+import Page from './Page';
 
 function Confirm(props) {
   return (
