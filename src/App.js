@@ -5,6 +5,7 @@ import Info from './components/Info';
 import Logo from './components/Logo';
 import question from './question.json';
 import Test from './components/Test';
+import Result from './components/Result';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -48,6 +49,13 @@ function App() {
               page={page} 
               data={question[page-2]}
               goToNextPage={goToNextPageAndAddScore}/>
+      }
+      {
+        page >= 7 &&
+        <Result score={score} 
+                userName={userName}
+                goToTheFirstPage={goToTheFirstPage}
+        />
       }
     </div>
   );
