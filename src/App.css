@@ -90,15 +90,19 @@ svg {
   transform:rotate(90deg) scale(0.7);opacity: 0;
 }
 .result {
-  width: 50vw;
-  opacity: 0;
-  transition: width .3s;
-  -webkit-transition: width .3s;
-}
-.result:hover {
   width: 100vw;
-  opacity: 1;
+  animation: .75s ease-in-out slideInFromLeft;
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .logo-landing {
   display: block;
   margin: auto;
@@ -206,6 +210,35 @@ svg {
 
 .next-step-btn-container {
   height: 80px ;
+}
+
+.next-step-btn.return {
+  background-color: #E9E9E9;
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 30px;
+  border-color: transparent;
+  box-shadow: 0px 5px 0px #c4c4c4;
+  transition: 0.1s;
+  letter-spacing: 1.2px;
+  color: rgba(54, 54, 54, 0.5);
+}
+.next-step-btn.return:hover {
+  margin-top: -5px;
+  box-shadow: 0px 10px 0px #c4c4c4;
+}
+.next-step-btn.return:focus {
+  outline: none;
+}
+.next-step-btn.return:active {
+  margin-top: 0px;
+  background-color: #c4c4c4;
+  box-shadow: 0px 5px 0px #c4c4c4;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .test-container input {
@@ -330,4 +363,24 @@ svg {
 
 .test-option-label svg {
   position: relative;
+}
+
+.next-step-btn-container.return {
+  color: rgba(54, 54, 54, 0.5);
+}
+
+.greet {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.08em;
+}
+
+.result-descipt {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.08em;
+  width: 650px;
 }
