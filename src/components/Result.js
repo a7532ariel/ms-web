@@ -15,10 +15,10 @@ function mapScore(val) {
   // 11-15（草莓）
   // 06-10（奇異果）
   // 01-05（水蜜桃）
-  if (val <= 5) return 0;
-  else if (val >= 6 && val <= 10) return 1;
-  else if (val >= 11 && val <= 15) return 2;
-  return 3;
+  if (val <= 5) return 'peach';
+  else if (val >= 6 && val <= 10) return 'kiwi';
+  else if (val >= 11 && val <= 15) return 'strawberry';
+  return 'orange';
 } 
 
 function Result(props) {
