@@ -56,8 +56,9 @@ function Result(props) {
     .then(response => response.text())
     .then(result => {
       console.log(result)
+      if (result === 'success') setisLoading('done')
+      else setisLoading('idle')
     })
-    setisLoading('done')
   }
 
   const handleGoToFirst = () => {
