@@ -33,6 +33,7 @@ app.post('/api/print', cors(), (req, res, next) => {
       console.log(result)
       res.send(result)
     })
+    // res.send('OK')s
 })
 
 app.get('*', (req, res) => {
