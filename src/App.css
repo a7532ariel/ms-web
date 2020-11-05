@@ -77,9 +77,10 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   height: 100%;
 }
-.container-landing, .test-container {
+.container-landing, .test-container, .result-container {
   text-align: center;
   margin: 0 auto;
 }
@@ -90,16 +91,19 @@ svg {
   transform:rotate(90deg) scale(0.7);opacity: 0;
 }
 .result {
-  width: 100vw;
-  animation: .75s ease-in-out slideInFromLeft;
+  /* width: 100vw; */
+  animation: 0.75s ease-out slideInFromLeft;
 }
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
+
+    transform: translate(-100%, -30%) scaleX(0.3) rotate(-20deg);
   }
   100% {
-    transform: translateX(0);
+    transform: translate(0, 0) scaleX(1) rotate(0deg);
+    width: 100vw;
   }
 }
 
@@ -325,7 +329,7 @@ svg {
   margin-bottom: 15px;
 }
 .test-option-container div {
-  vertical-align: middle;;
+  vertical-align: middle;
   clear:both;
 }
 .test-option-label {
@@ -375,12 +379,177 @@ svg {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: 0.08em;
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .result-descipt {
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 27px;
   letter-spacing: 0.08em;
   width: 650px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.result-btn-container {
+  height: 80px ;
+}
+.result-btn-container .next-step-btn-container {
+  height: auto ;
+}
+
+.result-btn-container div {
+  /* margin-top: 5px; */
+  display: inline-block;
+}
+.result-btn-container div:hover {
+  margin-top: -5px;
+}
+
+.result-btn-container div:first-child {
+  margin-right: 15px;
+}
+
+.result-container {
+  width: 850px;
+  height: 544px;
+  overflow: hidden;
+  position: relative;
+}
+.result-container svg {
+  position: relative;
+
+}
+
+.result-background-container {
+  /* display: inline-block;  */
+  /* position: absolute;  */
+  position: absolute;
+  vertical-align: middle; 
+  overflow: hidden; 
+  transition: all .35s ease-in-out;
+  left: 0;
+  z-index:1000;
+
+}
+.result-content {
+  
+  position: relative;; z-index:10001;
+  width: 780px;
+  height: 544px;
+  margin: 0 auto;
+  vertical-align: middle;
+  padding-top: 52px;
+}
+
+.result-title {
+/* med 32pt */
+font-weight: 700;
+font-size: 32px;
+line-height: 46px;
+/* identical to box height */
+letter-spacing: 0.08em;
+
+/* #363636 */
+color: #363636;
+}
+.loading {
+  margin-top: 200px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 0.08em;
+}
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 1.75s infinite;      
+  animation: ellipsis steps(4,end) 1.75s infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 40px;    
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 40px;    
+  }
+}
+
+.result-check-mark {
+  /* margin: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  /* display: inline-block; */
+  width: 98px;
+  height: 98px;
+  border-radius:50%;
+  border: 4px solid #29CEB9;
+  box-shadow: 0px 4px 10px rgba(41, 206, 185, 0.2);
+}
+
+.result-done {
+  /* 列印完成，請拿取結果 */
+
+/* font-style: normal; */
+font-weight: 500;
+font-size: 32px;
+line-height: 46px;
+letter-spacing: 0.08em;
+/* #7AB22A */
+color: #29CEB9;
+
+}
+.fruits {
+  margin-top: 25px;
+}
+.fruits img {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.result-pic-circle {
+  /* Ellipse 2 */
+display: inline-block;
+
+width: 112px;
+height: 112px;
+
+background: #FAFAFA;
+/* #7AB22A */
+border: 4px solid #29CEB9;
+box-sizing: border-box;
+box-shadow: 0px 4px 10px rgba(41, 206, 185, 0.2);
+border-radius: 50%;
+overflow: hidden;
+}
+
+
+.result-pic-container div {
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+.result-pic-container div:first-child {
+  margin-right: 45px;
+}
+
+.result-pic-container div:last-child {
+  margin-left: 45px;
 }
