@@ -65,16 +65,32 @@ function Result(props) {
     props.goToTheFirstPage()
   }
   //TODO change test-container 2 result-container
+  //TODO print animate
   return (
     <div>
       <ResultBG />
       <div className="content-container">
         <div className="mid-container">
           <div className="test-container"> 
-            <div className="greet">Hi, {props.userName}，以下是你的測驗結果：</div>
-            <div className="result-descipt">{result_descript[rank]}</div>
-            <Confirm formSubmit={formSubmit}/>
-            <Return goToTheFirstPage={handleGoToFirst}/>
+          {
+            isLoading === 'idle' &&  <div>           
+              <div className="greet">Hi, {props.userName}，以下是你的測驗結果：</div>
+              <div className="result-descipt">{result_descript[rank]}</div>
+              <Confirm formSubmit={formSubmit}/>
+              <Return goToTheFirstPage={handleGoToFirst}/>
+            </div>
+          }
+          {
+            isLoading === 'wait' &&
+            <div>列印中</div>
+          }
+          {
+            isLoading === 'done' &&
+            <div>
+              <div>列印完成，請拿取結果</div>
+              <Return goToTheFirstPage={handleGoToFirst}/>
+            </div>
+          }
           </div>
         </div>
       </div>
