@@ -8,6 +8,10 @@ import circle_kiwi from '../img/circle_kiwi.png'
 import circle_peach from '../img/circle_peach.png'
 import circle_strawberry from '../img/circle_strawberry.png'
 import circle_orange from '../img/circle_orange.png'
+import excel from '../img/excel.png';
+import ppt from '../img/ppt.png';
+import teams from '../img/teams.png';
+import onenote from '../img/onenote.png';
 
 function Confirm(props) {
     return (
@@ -119,6 +123,12 @@ function Result(props) {
     'strawberry': circle_strawberry,
     'orange': circle_orange
   }
+  const map_office_src = {
+    'peach': onenote,
+    'kiwi': excel,
+    'strawberry': teams,
+    'orange': ppt
+  }
   const rank = mapScore(props.score)
 
   const formSubmit = () => {
@@ -168,6 +178,8 @@ function Result(props) {
                 </div>
                 <Cross />
                 <div className="result-pic-circle">
+                <img src={map_office_src[rank]} alt={`office_${rank}`} 
+                style={{ maxHeight:'70%', maxWidth:'70%', marginTop: '14.5px'}}/>
                 </div>
               </div>      
               <div className="result-descipt">{result_descript[rank]}</div>
