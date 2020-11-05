@@ -23,7 +23,7 @@ function Info(props) {
                   準備開始囉，請輸入你的名字：
                 </div>
                 <div className="separator">
-                  <input type="text" maxlength="5" onChange={props.handleNameChange} placeholder="輸入姓名"/>
+                  <input type="text" maxLength="5" onChange={props.handleNameChange} placeholder="輸入姓名"/>
                 </div>
                 <Confirm cantGoToNext={props.userName === ''} goToNextPage={props.goToNextPage}/>
                 <Page page={props.page}/>
