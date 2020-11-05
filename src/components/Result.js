@@ -10,13 +10,24 @@ function Confirm(props) {
     );
 }
 
+function mapScore(val) {
+  // 16-20（柳丁）
+  // 11-15（草莓）
+  // 06-10（奇異果）
+  // 01-05（水蜜桃）
+  if (val <= 5) return 0;
+  else if (val >= 6 && val <= 10) return 1;
+  else if (val >= 11 && val <= 15) return 2;
+  return 3;
+} 
+
 function Result(props) {
   console.log(props)
   const formSubmit = () => {
     let requestOptions = {
       method: 'POST',
       body: JSON.stringify({
-        result: 1,
+        result: mapScore(props.score),
         name: props.userName
       }),
       headers: {
