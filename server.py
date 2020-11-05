@@ -29,7 +29,7 @@ def printer_output(result, name):
         p.image(new_img)
         p.cut()
     except Exception as e:
-        print(e)
+        raise e
 
 app = Flask(__name__, static_folder='build')
 app.config["DEBUG"] = True
