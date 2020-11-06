@@ -100,9 +100,9 @@ function Cross() {
 }
 
 function mapScore(val) {
-  if (val <= 5) return 'peach';
-  else if (val >= 6 && val <= 10) return 'kiwi';
-  else if (val >= 11 && val <= 15) return 'strawberry';
+  if (val <= 9) return 'peach';
+  else if (val >= 10 && val <= 12) return 'kiwi';
+  else if (val >= 13 && val <= 15) return 'strawberry';
   return 'orange';
 } 
 
